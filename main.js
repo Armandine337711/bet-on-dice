@@ -61,7 +61,7 @@ const app = {
 
         document.getElementById('diceFace').src = `./images/${diceValue}.png`;
         app.addCurrent(diceValue);
-        app.changePlayer(activePlayer);
+        activePlayer=app.changePlayer();
     },
 
     addCurrent: (diceValue) => {
