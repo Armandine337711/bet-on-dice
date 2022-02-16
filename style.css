@@ -20,5 +20,8 @@ html, body{
 }
 .is-active{
 border: solid 2px red;
+border-radius: 20%;
 font-weight: bold;
+padding: 0.6rem;
 }
+
