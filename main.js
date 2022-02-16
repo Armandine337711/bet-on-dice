@@ -12,6 +12,7 @@ const app = {
         app.fetchComponents();
         app.newGame();
 
+        app.newGameBtn.addEventListener("click", app.newGame)
         app.rollTheDice.addEventListener("click", app.rollDice);
         app.hold.addEventListener("click", app.holdScore);
     },
@@ -19,6 +20,7 @@ const app = {
     fetchComponents: () => {
         app.rollTheDice = document.getElementById("rollTheDice");
         app.hold = document.getElementById("hold");
+        app.newGameBtn = document.getElementById("newGameBtn")
         app.player1 = document.getElementById("player1");
         app.player2 = document.getElementById("player2");
         app.current1 = document.getElementById("current1");
@@ -56,7 +58,6 @@ const app = {
     },
 
     rollDice: () => {
-        console.log(activePlayer)
         let diceValue = app.getRandomNumber();
 
         document.getElementById('diceFace').src = `./images/${diceValue}.png`;
@@ -114,13 +115,12 @@ const app = {
     },
 
     changePlayer: () => {
-        console.log('clic', activePlayer)
         if (activePlayer === 1) {
             console.log('first')
             app.player1.classList.remove('is-active')
             app.player2.classList.add('is-active')
              activePlayer=2
-             console.log('choucroute', activePlayer)
+             
             
             
         } else {
@@ -129,7 +129,7 @@ const app = {
              activePlayer=1
             
         }
-        console.log('new active player', activePlayer)
+        
         return activePlayer
     }
 
