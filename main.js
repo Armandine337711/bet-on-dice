@@ -97,7 +97,7 @@ const app = {
             app.current2.textContent = score2
         }
         app.checkScore();
-        app.changePlayer();
+        acivePlayer=app.changePlayer();
     },
 
     checkScore: () => {
@@ -113,7 +113,7 @@ const app = {
 
     },
 
-    changePlayer: (activePlayer) => {
+    changePlayer: () => {
         console.log('clic', activePlayer)
         if (activePlayer === 1) {
             console.log('first')
