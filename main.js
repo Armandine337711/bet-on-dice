@@ -10,8 +10,8 @@ const app = {
 
 
     init: () => {
-        console.log("init !");
-        // 
+        //console.log("init !");
+
         app.fetchComponents();
         app.newGame();
 
@@ -78,7 +78,7 @@ const app = {
     },
 
     addCurrent: (diceValue) => {
-        console.log('addCurrent', diceValue)
+
         if (activePlayer === 1 ){
             score1 += diceValue
             app.current1.textContent = score1
@@ -86,12 +86,12 @@ const app = {
             score2 += diceValue
             app.current2.textContent = score2
         }
-            console.log(score1, score2)
+
 
     },
 
     holdScore: () => {
-        console.log('hold')
+
         if (activePlayer === 1) {
             mark1 += score1
             score1 = 0
@@ -115,14 +115,14 @@ const app = {
             alert(`Bravo Player2 : C'est gagné ! C'est gagné ! C'est gagné !`)
             app.init()
         } else {
-            return
+
         }
 
     },
 
     changePlayer: () => {
         if (activePlayer === 1) {
-            console.log('first')
+
             app.player1.classList.remove('is-active')
             app.player2.classList.add('is-active')
              activePlayer=2
