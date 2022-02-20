@@ -61,31 +61,37 @@ const app = {
         let diceValue = app.getRandomNumber();
 
         document.getElementById('diceFace').src = `./images/${diceValue}.png`;
-        app.addCurrent(diceValue);
-        activePlayer=app.changePlayer();
+
+        diceValue === 1 ? app.checkValue() : app.addCurrent(diceValue);
+
+    },
+
+    checkValue: () => {
+             if (activePlayer === 1 ){
+                score1 = 0
+                app.current1.textContent = score1
+            } else {
+                score2 = 0
+                app.current2.textContent = score2
+            }
+            activePlayer = app.changePlayer();
     },
 
     addCurrent: (diceValue) => {
-        if (activePlayer === 1) {
-            if (diceValue === 1) {
-                score1 = 0
-            } else {
-                score1 += diceValue
-            }
-
+        console.log('addCurrent', diceValue)
+        if (activePlayer === 1 ){
+            score1 += diceValue
             app.current1.textContent = score1
         } else {
-            if (diceValue === 1) {
-                score2 = 0
-            } else {
-                score2 += diceValue
-            }
+            score2 += diceValue
             app.current2.textContent = score2
         }
+            console.log(score1, score2)
 
     },
 
     holdScore: () => {
+        console.log('hold')
         if (activePlayer === 1) {
             mark1 += score1
             score1 = 0
@@ -98,7 +104,7 @@ const app = {
             app.current2.textContent = score2
         }
         app.checkScore();
-        acivePlayer=app.changePlayer();
+        activePlayer=app.changePlayer();
     },
 
     checkScore: () => {
