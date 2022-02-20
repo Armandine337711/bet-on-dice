@@ -1,4 +1,7 @@
-let score1 = score2 = mark1 = mark2 = 0;
+let score1 = 0;
+let score2 = 0;
+let mark1 = 0;
+let mark2 = 0;
 let activePlayer;
 let diceResult;
 
@@ -29,17 +32,14 @@ const app = {
         app.score2 = document.getElementById("score2");
     },
 
-    addListenerToAction: (event) => {
-        app.rollThedice.addEventListener("click", app.rollDice);
-    },
-    newGame: () => {
-        score = [0, 0]
-        document.getElementById('score1').textContent = score[0];
-        document.getElementById('score2').textContent = score[1];
+      newGame: () => {
+        score1 = score2 = 0;
+        document.getElementById('score1').textContent = score1;
+        document.getElementById('score2').textContent = score2;
 
-        current = [0, 0]
-        document.getElementById('current1').textContent = current[0];
-        document.getElementById('current2').textContent = current[1];
+        mark1 = mark2 = 0
+        document.getElementById('current1').textContent = mark1;
+        document.getElementById('current2').textContent = mark2;
 
         diceResult = 0
         document.getElementById('diceFace').src = './images/global_dice.png'
