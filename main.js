@@ -128,9 +128,6 @@ const app = {
             app.player1.classList.remove('is-active')
             app.player2.classList.add('is-active')
              activePlayer=2
-             
-            
-            
         } else {
             app.player2.classList.remove('is-active')
             app.player1.classList.add('is-active')
