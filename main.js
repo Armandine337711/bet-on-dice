@@ -42,7 +42,8 @@ const app = {
         document.getElementById('current2').textContent = mark2;
 
         diceResult = 0
-        document.getElementById('diceFace').src = './images/global_dice.png'
+        document.getElementById('diceFace').src = './images/global_dice.png';
+        document.getElementById('diceFace').alt = 'Dé global'
 
         activePlayer = 1
         app.player1.classList.add('is-active');
@@ -61,6 +62,7 @@ const app = {
         let diceValue = app.getRandomNumber();
 
         document.getElementById('diceFace').src = `./images/${diceValue}.png`;
+        document.getElementById('diceFace').alt = `Face ${diceValue}`
 
         diceValue === 1 ? app.checkValue() : app.addCurrent(diceValue);
 
@@ -109,10 +111,10 @@ const app = {
 
     checkScore: () => {
         if (mark1 >= 100) {
-            alert(`Bravo Player1 : C'est gagné ! C'est gagné ! C'est gagné !`)
+            alert(`Bravo Joueur 1 : C'est gagné ! C'est gagné ! C'est gagné !`)
             app.init()
         } else if (mark2 >= 100) {
-            alert(`Bravo Player2 : C'est gagné ! C'est gagné ! C'est gagné !`)
+            alert(`Bravo Joueur 2 : C'est gagné ! C'est gagné ! C'est gagné !`)
             app.init()
         } else {
 
