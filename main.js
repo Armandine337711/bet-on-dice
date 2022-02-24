@@ -81,8 +81,7 @@ const app = {
 
         if (activePlayer === 1 ){
             score1 += diceValue
-            app.current1.textContent = score1
-        } else {
+ 
             score2 += diceValue
             app.current2.textContent = score2
         }
@@ -142,3 +141,11 @@ const app = {
 };
 
 document.addEventListener("DOMContentLoaded", app.init);
+
+
+// lancer le dé
+        // fonction random
+
+        // retourner le nombre
+
+        // tu associes le nombre à une image

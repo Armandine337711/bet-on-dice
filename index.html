@@ -5,30 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css ">
     <link rel="stylesheet" href="style.css">
     
     <title>Bet on Dice</title>
 </head>
 
 
-    <body class="containt container-xl h-100">
+    <body class="principal container-xl h-100">
 
         <div class="container-xl halfBcg h-100 d-flex flex-column justify-content-around">
 
             <div class="row d-flex flex-column "><h1 class="d-flex justify-content-center">PARIS SUR LES DES</h1>
                 <div class="col-12 d-flex justify-content-center mt-3" id="newGame">
                    
-                    <button class="btn fs-3 " id="newGameBtn"> <image src="images/plus-circle.svg" class="mx-3 h-50"></image>NOUVEAU JEU</button>
+                    <button class="btn fs-3 " id="newGameBtn"> <img src="images/plus-circle.svg" class="mx-3 h-50" alt="New Game"/>NOUVEAU JEU</button>
                 </div>
+                <div class="col-12 d-flex justify-content-center mt-3" id="rules">
+
+                    <button type="button" class="btn fs-4 " data-toogle="modal" data-target="#gameRules">
+                        <!--<img src="images/patch-question-fill.svg" class="mx-3 h-50" alt="Rules"/>-->
+                        RÈGLES DU JEU
+                    </button>
+                </div>
+
             </div>
             <div class="row">
                 <div class="col d-flex align-items-center justify-content-center flex-column">
-                    <p class=" fs-2"id='player1'>JOUEUR 1</p>
+                    <p class=" fs-2" id='player1'>JOUEUR 1</p>
                     <p class="fs-1 text-danger" id="score1"></p>
                 </div>
                 <div class="col d-flex align-items-center justify-content-center flex-column">
-                    <img class="w-25" id="diceFace" src="">
+                    <img class="w-25" id="diceFace" src="" alt=""/>
                 </div>
                 <div class="col d-flex align-items-center justify-content-center flex-column">
                     <p class="fs-2" id="player2">JOUEUR 2  </p>
@@ -44,11 +52,11 @@
                 </div>
                 <div class="col d-flex align-items-center justify-content-center flex-column">
                     <button id="rollTheDice" class="btn fs-2">
-                        <image src="images/arrow-repeat.svg" class="mx-3 h-50"></image>
+                        <img src="images/arrow-repeat.svg" class="mx-3 h-50" alt="Launch dice"/>
                         Lancer le dé
                     </button>
                     <button id="hold" class="btn fs-2">
-                        <image src="images/box-arrow-in-down.svg" class="mx-3 h-50"></image>
+                        <img src="images/box-arrow-in-down.svg" class="mx-3 h-50" alt="Hold score" />
                         Sauvegarder
                     </button>
                 </div>
@@ -60,14 +68,31 @@
                 </div>
             </div>
         </div>
+        <!-- Modal -->
+        <div class="modal" tabindex="-1" role="dialog" id="gameRules">
+
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="modal-title">Règles du Jeu</div>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Ceci est le texte
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal" aria-label="Close">
+                            Fermer
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
-
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-              integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-                crossorigin="anonymous"></script>
+        <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="main.js"></script>
 </body>
 
